@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.app-container {
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.app-title {
+  text-align: center;
+  color: #2c3e50;
+  font-family: sans-serif;
+}
+
+.table-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+.food-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header-row {
+  border-bottom: 2px solid #eee;
+  text-align: left;
+}
+
+.data-row {
+  border-bottom: 1px solid #eee;
+  height: 45px;
+}
+
+.food-table td,
+.food-table th {
+  width: 25vw;
+  border: 1px solid white;
+  text-align: center;
+  min-height: 25px;
+  margin: 0;
+  height: 45px;
+  padding: 12px;
+}
+
+.spacer {
+  min-height: 25px;
+}
+
+.text-input,
+.number-input {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 45px;
+}
+
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #2c3e50;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.add-item-button {
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.add-item-button:hover {
+  background-color: #219652;
+}
+
+.footer-stats {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  width: 100%;
+}
+
+.stat-item {
+  text-align: center;
+  width: 50%;
+  padding: 10px;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.stat-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.target-met {
+  background-color: #27ae60;
+  color: white;
+}
+
+.target-not-met {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.menu-button {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+  background: #1a2530;
+}
+
+.popover-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.menu-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Close menu when clicking outside */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}

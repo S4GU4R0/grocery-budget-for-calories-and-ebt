@@ -8,7 +8,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import React from "react";
-import ExploreContainer from "../components/ExploreContainer";
+import FoodTracker from "../components/FoodTracker.js"
 import "./Home.css";
 
 const Home: React.FC = () => {
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <ExploreContainer />
+        <FoodTracker />
       </IonContent>
     </IonPage>
   );
