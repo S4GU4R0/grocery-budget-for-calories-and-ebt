@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '@ionic/react/css/core.css';
 import {
     IonContent,
     IonHeader,
@@ -16,9 +17,6 @@ import {
     IonIcon,
     IonNote,
     IonRange,
-    IonCheckbox,
-    IonRadioGroup,
-    IonRadio,
     IonInput,
     IonTextarea,
     IonSegment,
@@ -29,7 +27,6 @@ import {
     IonCardTitle,
     IonAlert,
     IonActionSheet,
-    IonPopover,
     IonButtons,
     IonBackButton
 } from '@ionic/react';
@@ -45,7 +42,6 @@ import {
     wifi,
     bluetooth,
     cellular,
-    battery,
     settings,
     help,
     logOut,
@@ -55,9 +51,9 @@ import {
     trash
 } from 'ionicons/icons';
 
-const SettingsPage = () => {
+const Settings = () => {
     const [darkMode, setDarkMode] = useState(false);
-    const [notifications, setNotifications] = useState(true);
+    const [notificationsEnabled, setNotificationsEnabled] = useState(true);
     const [pushNotifications, setPushNotifications] = useState(true);
     const [emailNotifications, setEmailNotifications] = useState(false);
     const [soundEnabled, setSoundEnabled] = useState(true);
@@ -79,18 +75,15 @@ const SettingsPage = () => {
     const [showActionSheet, setShowActionSheet] = useState(false);
 
     const handleSaveProfile = () => {
-        // Placeholder save logic
         console.log('Profile saved');
     };
 
     const handleLogout = () => {
-        // Placeholder logout logic
         console.log('User logged out');
         setShowLogoutAlert(false);
     };
 
     const handleDeleteAccount = () => {
-        // Placeholder delete account logic
         console.log('Account deleted');
         setShowDeleteAlert(false);
     };
@@ -113,53 +106,6 @@ const SettingsPage = () => {
 
             <IonContent fullscreen>
 
-                {/* Appearance Section */}
-                <IonList>
-                    <IonListHeader>
-                        <IonLabel>Appearance</IonLabel>
-                    </IonListHeader>
-
-                    <IonItem>
-                        <IonIcon icon={moon} slot="start" />
-                        <IonLabel>Dark Mode</IonLabel>
-                        <IonToggle
-                            checked={darkMode}
-                            onIonToggle={(e) => setDarkMode(e.detail.checked)}
-                        />
-                    </IonItem>
-
-                    <IonItem>
-                        <IonIcon icon={colorPalette} slot="start" />
-                        <IonLabel>Theme</IonLabel>
-                        <IonSelect
-                            value={theme}
-                            onSelectionChange={(e) => setTheme(e.detail.value)}
-                            interface="popover"
-                        >
-                            <IonSelectOption value="light">Light</IonSelectOption>
-                            <IonSelectOption value="dark">Dark</IonSelectOption>
-                            <IonSelectOption value="auto">Auto</IonSelectOption>
-                        </IonSelect>
-                    </IonItem>
-
-                    <IonItem>
-                        <IonIcon icon={settings} slot="start" />
-                        <IonLabel>Font Size</IonLabel>
-                        <IonRange
-                            value={fontSize}
-                            min={12}
-                            max={20}
-                            step={2}
-                            snaps={true}
-                            ticks={true}
-                            onIonInput={(e) => setFontSize(e.detail.value as number)}
-                        >
-                            <IonLabel slot="start">A</IonLabel>
-                            <IonLabel slot="end">A</IonLabel>
-                        </IonRange>
-                    </IonItem>
-                </IonList>
-
                 {/* Notifications Section */}
                 <IonList>
                     <IonListHeader>
@@ -170,24 +116,24 @@ const SettingsPage = () => {
                         <IonIcon icon={notifications} slot="start" />
                         <IonLabel>Enable Notifications</IonLabel>
                         <IonToggle
-                            checked={notifications}
-                            onIonToggle={(e) => setNotifications(e.detail.checked)}
+                            checked={notificationsEnabled}
+                            onIonChange={(e) => setNotificationsEnabled(e.detail.checked)}
                         />
                     </IonItem>
 
-                    <IonItem disabled={!notifications}>
+                    <IonItem disabled={!notificationsEnabled}>
                         <IonLabel>Push Notifications</IonLabel>
                         <IonToggle
                             checked={pushNotifications}
-                            onIonToggle={(e) => setPushNotifications(e.detail.checked)}
+                            onIonChange={(e) => setPushNotifications(e.detail.checked)}
                         />
                     </IonItem>
 
-                    <IonItem disabled={!notifications}>
+                    <IonItem disabled={!notificationsEnabled}>
                         <IonLabel>Email Notifications</IonLabel>
                         <IonToggle
                             checked={emailNotifications}
-                            onIonToggle={(e) => setEmailNotifications(e.detail.checked)}
+                            onIonChange={(e) => setEmailNotifications(e.detail.checked)}
                         />
                     </IonItem>
 
@@ -196,7 +142,7 @@ const SettingsPage = () => {
                         <IonLabel>Sound</IonLabel>
                         <IonToggle
                             checked={soundEnabled}
-                            onIonToggle={(e) => setSoundEnabled(e.detail.checked)}
+                            onIonChange={(e) => setSoundEnabled(e.detail.checked)}
                         />
                     </IonItem>
 
@@ -204,7 +150,7 @@ const SettingsPage = () => {
                         <IonLabel>Vibration</IonLabel>
                         <IonToggle
                             checked={vibrationEnabled}
-                            onIonToggle={(e) => setVibrationEnabled(e.detail.checked)}
+                            onIonChange={(e) => setVibrationEnabled(e.detail.checked)}
                         />
                     </IonItem>
                 </IonList>
@@ -220,7 +166,7 @@ const SettingsPage = () => {
                         <IonLabel>Biometric Authentication</IonLabel>
                         <IonToggle
                             checked={biometricAuth}
-                            onIonToggle={(e) => setBiometricAuth(e.detail.checked)}
+                            onIonChange={(e) => setBiometricAuth(e.detail.checked)}
                         />
                     </IonItem>
 
@@ -228,7 +174,7 @@ const SettingsPage = () => {
                         <IonLabel>Two-Factor Authentication</IonLabel>
                         <IonToggle
                             checked={twoFactorAuth}
-                            onIonToggle={(e) => setTwoFactorAuth(e.detail.checked)}
+                            onIonChange={(e) => setTwoFactorAuth(e.detail.checked)}
                         />
                     </IonItem>
 
@@ -236,7 +182,7 @@ const SettingsPage = () => {
                         <IonLabel>Location Services</IonLabel>
                         <IonToggle
                             checked={locationServices}
-                            onIonToggle={(e) => setLocationServices(e.detail.checked)}
+                            onIonChange={(e) => setLocationServices(e.detail.checked)}
                         />
                     </IonItem>
 
@@ -262,7 +208,7 @@ const SettingsPage = () => {
                         <IonLabel>Auto Sync</IonLabel>
                         <IonToggle
                             checked={autoSync}
-                            onIonToggle={(e) => setAutoSync(e.detail.checked)}
+                            onIonChange={(e) => setAutoSync(e.detail.checked)}
                         />
                     </IonItem>
 
@@ -271,7 +217,7 @@ const SettingsPage = () => {
                         <IonLabel>Data Usage</IonLabel>
                         <IonSegment
                             value={dataUsage}
-                            onIonChange={(e) => setDataUsage(e.detail.value!)}
+                            onIonChange={(e) => setDataUsage(e.detail.value as string)}
                         >
                             <IonSegmentButton value="wifi">
                                 <IonLabel>WiFi Only</IonLabel>
@@ -300,7 +246,7 @@ const SettingsPage = () => {
                         <IonLabel>Language</IonLabel>
                         <IonSelect
                             value={language}
-                            onSelectionChange={(e) => setLanguage(e.detail.value)}
+                            onIonChange={(e) => setLanguage(e.detail.value)}
                             interface="action-sheet"
                         >
                             <IonSelectOption value="en">English</IonSelectOption>
@@ -428,4 +374,4 @@ const SettingsPage = () => {
     );
 };
 
-export default SettingsPage;
+export default Settings;

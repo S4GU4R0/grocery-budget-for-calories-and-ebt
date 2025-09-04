@@ -8,7 +8,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import React from "react";
-import FoodTracker from "../components/FoodTracker.js"
+import FoodTracker from "../components/FoodTracker"
 import "./Home.css";
 
 const Home: React.FC = () => {
