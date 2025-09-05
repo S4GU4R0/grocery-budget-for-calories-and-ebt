@@ -3,8 +3,8 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact, IonTabs, IonTabBar, IonTabButton, IonLabel, IonIcon, IonContent, IonPage, IonGrid, IonRow, IonCol, IonButton } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
-import Settings from './pages/Settings';
-import { document, construct, settings } from 'ionicons/icons';
+import About from './pages/About';
+import { document, informationCircle } from 'ionicons/icons';
 
 
 import '@ionic/react/css/core.css';
@@ -37,8 +37,8 @@ const App: React.FC = () => {
         <IonTabs>
           <IonRouterOutlet>
 
-            <Route exact path="/settings">
-              <Settings />
+            <Route exact path="/about">
+              <About />
             </Route>
             <Route exact path="/">
               <Home />
@@ -49,14 +49,12 @@ const App: React.FC = () => {
               <IonIcon icon={document} />
               <IonLabel>Budgets</IonLabel>
             </IonTabButton>
-            <IonTabButton tab="tools" href="/tools">
-              <IonIcon icon={construct} />
-              <IonLabel>Tools</IonLabel>
+
+            <IonTabButton tab="about" href="/about">
+              <IonIcon icon={informationCircle} />
+              <IonLabel>About</IonLabel>
             </IonTabButton>
-            <IonTabButton tab="settings" href="/settings">
-              <IonIcon icon={settings} />
-              <IonLabel>Settings</IonLabel>
-            </IonTabButton>
+
           </IonTabBar>
         </IonTabs>
       </IonReactRouter>
