@@ -61,14 +61,6 @@ body {
   min-height: 25px;
 }
 
-.text-input,
-.number-input {
-  padding: 8px;
-  width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  height: 45px;
-}
 
 .sticky-footer {
   position: fixed;

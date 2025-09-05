@@ -95,7 +95,7 @@ const FoodTracker = () => {
               type="number"
               onInput={(e) => setCaloriesNeededPerDay(Number(e.target.value))}
               value={caloriesNeededPerDay}
-              className="number-input"
+              className="ion-no-border"
             />
           </IonCol>
           <IonCol></IonCol>
@@ -114,7 +114,7 @@ const FoodTracker = () => {
               type="number"
               onInput={(e) => setEbtPerMonth(Number(e.target.value))}
               value={ebtPerMonth}
-              className="number-input"
+              className="ion-no-border"
             />
           </IonCol>
           <IonCol></IonCol>
@@ -147,7 +147,7 @@ const FoodTracker = () => {
                 type="number"
                 value={item.calories}
                 onInput={(e) => updateRow(item.id, 'calories', e.target.value)}
-                className="number-input"
+                className="ion-no-border"
               />
             </IonCol>
             <IonCol>
@@ -156,7 +156,7 @@ const FoodTracker = () => {
                 step="0.01"
                 value={item.cost}
                 onInput={(e) => updateRow(item.id, 'cost', e.target.value)}
-                className="number-input"
+                className="ion-no-border"
               />
             </IonCol>
           </IonRow>
