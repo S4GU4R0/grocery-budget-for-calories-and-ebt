@@ -43,11 +43,21 @@ const About: React.FC = () => {
             <IonContent className="ion-padding">
                 <IonCard>
                     <IonCardHeader>
-                        <IonCardTitle>Welcome to Rations</IonCardTitle>
+                        <IonCardTitle>Welcome</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
                         <IonText>
                             <p>Rations helps you maximize your food budget by tracking calories and costs to ensure you get the most nutrition for your money.</p>
+                        </IonText>
+                    </IonCardContent>
+                </IonCard>
+                <IonCard>
+                    <IonCardHeader>
+                        <IonCardTitle>About RATIONS</IonCardTitle>
+                    </IonCardHeader>
+                    <IonCardContent>
+                        <IonText>
+                            <p>Rations was built by S4GU4R0 to make sure he gets enough food in his monthly grocery trip while staying in budget. You can support him by sending him a tip on CashApp or Venmo.</p>
                         </IonText>
                     </IonCardContent>
                 </IonCard>
@@ -61,16 +71,16 @@ const About: React.FC = () => {
                             <IonItem>
                                 <IonIcon icon={calculator} slot="start" color="primary" />
                                 <IonLabel>
-                                    <h3>Set Your Monthly Calories</h3>
-                                    <p>The app calculates 60,000 calories per month (2,000 calories × 30 days) as your target.</p>
+                                    <h3>Set Your Daily Calories</h3>
+                                    <p>The app calculates 31 days' worth of calories for you.</p>
                                 </IonLabel>
                             </IonItem>
 
                             <IonItem>
                                 <IonIcon icon={wallet} slot="start" color="primary" />
                                 <IonLabel>
-                                    <h3>Enter Your EBT Allotment</h3>
-                                    <p>Input your monthly food budget in the "EBT Allotment/Month" field.</p>
+                                    <h3>Set Your EBT Allotment</h3>
+                                    <p>You can se apps like Propel to check your balance or deposits.</p>
                                 </IonLabel>
                             </IonItem>
                         </IonList>
@@ -171,59 +181,31 @@ const About: React.FC = () => {
 
                 <IonCard>
                     <IonCardHeader>
-                        <IonCardTitle>Tips for Success</IonCardTitle>
+                        <IonCardTitle>CSV Import</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
                         <IonList>
                             <IonItem>
                                 <IonLabel>
-                                    <h3>Focus on Calorie-Dense Foods</h3>
-                                    <p>Rice, pasta, beans, and oats provide many calories per dollar</p>
+                                    <h3>Headers are required</h3>
+                                    <p>Your CSV file's first row shhould be the labels for the columns.</p>
                                 </IonLabel>
                             </IonItem>
 
                             <IonItem>
                                 <IonLabel>
-                                    <h3>Buy in Bulk</h3>
-                                    <p>Larger quantities often have better per-calorie pricing</p>
+                                    <h3>Name, Calories, Cost, Notes</h3>
+                                    <p>These are the header names you need in your file. They are case insensitive.</p>
                                 </IonLabel>
                             </IonItem>
 
                             <IonItem>
                                 <IonLabel>
-                                    <h3>Check Unit Prices</h3>
-                                    <p>Compare cost per pound or per ounce, not just total price</p>
-                                </IonLabel>
-                            </IonItem>
-
-                            <IonItem>
-                                <IonLabel>
-                                    <h3>Balance Nutrition</h3>
-                                    <p>Include proteins, vegetables, and healthy fats alongside staples</p>
+                                    <h3>To save your file </h3>
+                                    <p>export the CSV. Be sure to only overwrite if that's what you indeed want.</p>
                                 </IonLabel>
                             </IonItem>
                         </IonList>
-                    </IonCardContent>
-                </IonCard>
-
-                <IonCard>
-                    <IonCardHeader>
-                        <IonCardTitle>Example Shopping List</IonCardTitle>
-                    </IonCardHeader>
-                    <IonCardContent>
-                        <IonText>
-                            <p><strong>Item:</strong> White Rice (20 lbs)</p>
-                            <p><strong>Calories:</strong> 29,000</p>
-                            <p><strong>Cost:</strong> $15.00</p>
-                            <p><strong>Calories per dollar:</strong> 1,933</p>
-                        </IonText>
-
-                        <IonText>
-                            <p><strong>Item:</strong> Dried Beans (5 lbs)</p>
-                            <p><strong>Calories:</strong> 7,700</p>
-                            <p><strong>Cost:</strong> $8.00</p>
-                            <p><strong>Calories per dollar:</strong> 963</p>
-                        </IonText>
                     </IonCardContent>
                 </IonCard>
             </IonContent>
