@@ -15,6 +15,11 @@ export default defineConfig({
       background_color: '#ffffff',
       icons: [
         {
+          "src": "assets/icon/favicon.ico",
+          "type": "x-icon",
+          "purpose": "any maskable"
+        },
+        {
           "src": "assets/icon/android-chrome-192x192.svg",
           "sizes": "192x192",
           "type": "image/svg+xml"
