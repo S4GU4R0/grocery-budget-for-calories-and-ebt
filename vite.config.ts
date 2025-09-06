@@ -6,6 +6,7 @@ export default defineConfig({
   build: {
     outDir: "build", // Keep same as CRA for gh-pages
   },
+  base: "/rations/",
   server: {
     port: 3000,
   },
