@@ -128,6 +128,7 @@ const CSVImport = ({ onComplete, mappingTemplate }) => {
                 onComplete(transformedData);
             }
         } catch (err) {
+            console.log({ err })
             setError('Upload failed. Please try again.');
             setShowAlert(true);
         } finally {
@@ -196,7 +197,7 @@ const CSVImport = ({ onComplete, mappingTemplate }) => {
                         </IonListHeader>
 
                         <IonText color="medium">
-                            <p>Map your CSV columns to the appropriate fields:</p>
+                            <p>ake sure the equivalent data goes in the right spot:</p>
                         </IonText>
 
                         <IonList>

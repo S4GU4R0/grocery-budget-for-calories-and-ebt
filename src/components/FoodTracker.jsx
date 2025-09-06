@@ -5,9 +5,11 @@ import {
   IonCol,
   IonInput,
 } from '@ionic/react';
+import CSVImport from './CSVImport';
 import './style.css';
 
 const FoodTracker = ({
+  setRows,
   rows,
   updateRow,
   ebtPerMonth,
@@ -17,8 +19,27 @@ const FoodTracker = ({
   caloriesPerMonth
 }) => {
 
+  // csv import stuff
+  const handleImportComplete = (data) => {
+    console.log('Imported data:', data);
+    // Process the data (send to API, etc.)
+    setRows(data)
+  };
+
+  const customMappingTemplate = {
+    'name': 'name',
+    'cost': 'cost',
+    'calories': 'calories',
+    "notes": "notes"
+  };
+
+
   return (
     <div className="app-container">
+      <CSVImport
+        onComplete={handleImportComplete}
+        mappingTemplate={customMappingTemplate}
+      />
       <IonGrid className="table-container">
         <IonRow className="table-header-row">
           <IonCol>Calories/Month</IonCol>
@@ -59,6 +80,7 @@ const FoodTracker = ({
           <IonCol>Item</IonCol>
           <IonCol>Calories</IonCol>
           <IonCol>Cost</IonCol>
+          <IonCol>Notes</IonCol>
         </IonRow>
 
         {rows.map((item) => (

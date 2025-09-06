@@ -1,4 +1,4 @@
-# rations
+# RATIONS
 
 A calorie and EBT budget calculator
 

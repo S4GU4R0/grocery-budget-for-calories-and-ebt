@@ -48,12 +48,13 @@ const Home: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton text={``} />
           </IonButtons>
-          <IonTitle>rations</IonTitle>
+          <IonTitle>RATIONS</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen>
         <FoodTracker
+          setRows={setRows}
           rows={rows}
           updateRow={updateRow}
           ebtPerMonth={ebtPerMonth}

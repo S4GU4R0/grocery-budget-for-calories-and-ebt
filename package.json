@@ -60,5 +60,5 @@
     "Safari >=15",
     "iOS >=15"
   ],
-  "description": "An Ionic project"
+  "description": "A food insecurity budgeting tool"
 }
